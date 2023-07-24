@@ -1,0 +1,442 @@
+ul,
+p,
+dl,
+dd,
+h3 {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.new {
+  margin-left: 0.4rem;
+}
+
+/* ---------------------------------------------- */
+/* 헤더                                            */
+/* ---------------------------------------------- */
+
+.header {
+  border-bottom: 0.1rem solid var(--color-gray-100);
+}
+
+.header__inner {
+  display: block;
+  width: 102rem;
+  margin: 0 auto;
+}
+
+.button--category {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 11rem;
+  height: 11.6rem;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: 0;
+  border: none;
+  background-color: var(--color-blue-600);
+}
+
+.button--category:focus {
+  outline: none;
+  border-radius: 0.4rem;
+  border: 0.1rem solid var(--color-red-500);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button--category svg {
+  margin-bottom: 1.2rem;
+}
+
+/* ---------------------------------------------- */
+/* 내비게이션                                        */
+/* ---------------------------------------------- */
+
+.navigation {
+  position: relative;
+  display: none;
+  width: 102rem;
+  margin: 0 auto;
+}
+
+.navigation.is--active {
+  display: block;
+}
+
+.navigation__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.depth1,
+.depth2,
+.depth3 {
+  display: flex;
+  flex-direction: column;
+  height: 50rem;
+  padding: 1rem 0.5rem;
+  background-color: var(--color-white);
+}
+
+.depth1 {
+  position: relative;
+  z-index: 30;
+}
+
+.depth1 i {
+  font-size: 2rem;
+  margin-right: 0.4rem;
+}
+
+.depth2 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 20;
+  display: none;
+}
+
+.depth3 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  display: none;
+}
+
+.depth2.is--active,
+.depth3.is--active {
+  display: flex;
+}
+
+.depth1::after,
+.depth2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  display: block;
+  width: 0.1rem;
+  background-color: var(--color-gray-200);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.navigation__list li {
+  display: flex;
+}
+
+.navigation__list a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 17rem;
+  height: 3rem;
+  padding-right: 3rem;
+  padding-left: 2rem;
+  color: var(--color-black);
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+.navigation__list a.is--active,
+.navigation__list a:hover,
+.navigation__list a:focus,
+.navigation__list a:active {
+  color: var(--color-blue-600);
+}
+
+.depth1 a.is--active::after,
+.depth2 a.is--active::after,
+.navigation__list a:hover::after,
+.navigation__list a:focus::after,
+.navigation__list a:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background-image: url('../../assets/icon/more-right-active.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.depth3 a::after {
+  display: none !important;
+}
+
+/* ---------------------------------------------- */
+/* 메인 콘텐츠                                       */
+/* ---------------------------------------------- */
+/* 메인 콘텐츠 영역의 최소 높이 설정 */
+.main {
+  min-height: 52rem;
+}
+
+/* ---------------------------------------------- */
+/* 푸터                                            */
+/* ---------------------------------------------- */
+
+/* footer top */
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  background-color: var(--color-gray-200);
+}
+
+.footer-top > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: 0 1.4rem;
+  color: var(--color-gray-800);
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+.footer-top > .divider {
+  color: var(--color-gray-800);
+}
+
+/* footer middle */
+
+.footer-middle {
+  display: flex;
+  width: 120rem;
+  height: 20.7rem;
+  padding: 3.2rem 0;
+  margin: 0 auto;
+}
+
+.footer-middle-logo {
+  display: block;
+  width: 17.6rem;
+  height: 4rem;
+  flex-shrink: 0;
+  margin-right: 6.3rem;
+  background-image: url('../../assets/logo/logo-mono.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer-middle-list {
+  margin-right: 6.2rem;
+  color: var(--color-gray-800);
+  font-size: 1.6rem;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+.footer-middle-list > div {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 1.2rem;
+  white-space: nowrap;
+}
+
+.footer-middle-list > div:last-child {
+  margin-bottom: 0;
+}
+
+.footer-middle-list dt::after {
+  content: ':';
+  margin: 0 0.4rem;
+}
+
+.footer-address {
+  margin-right: 6.2rem;
+  color: var(--color-gray-800);
+  font-size: 1.6rem;
+  line-height: 120%;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.footer-address-title {
+  margin-bottom: 0.8rem;
+}
+
+.footer-address-title strong::after {
+  display: inline-block;
+  content: '';
+  width: 0.1rem;
+  height: 1.2rem;
+  margin-right: 1.5rem;
+  margin-left: 1.3rem;
+  border-right: 0.1rem solid var(--color-gray-800);
+}
+
+.footer-address-content {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+}
+
+.footer-address-tel {
+  display: flex;
+  align-items: center;
+  height: 5.8rem;
+  margin-bottom: 1.2rem;
+  font-size: 4.8rem;
+  font-weight: 700;
+}
+
+.footer-address-content > span {
+  margin-bottom: 0.8rem;
+}
+
+.footer-bank {
+  color: var(--color-gray-800);
+  font-size: 1.6rem;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+.footer-bank-title {
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+}
+
+/* footer bottom */
+
+.footer-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 10.2rem;
+  padding: 1.6rem 0;
+  color: var(--color-gray-200);
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: 0;
+  background-color: var(--color-gray-900);
+}
+
+.footer-bottom-desc {
+  margin-right: 5rem;
+}
+
+.footer-bottom-link {
+  display: inline-block;
+  width: 3.4rem;
+  height: 3.4rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.footer-bottom-link:last-child {
+  margin-right: 0;
+}
+
+.footer-bottom-link.instagram {
+  background: linear-gradient(
+    174.12deg,
+    #285aeb 5.61%,
+    #bc1888 22.32%,
+    #cc2366 36.16%,
+    #dc2743 51.91%,
+    #e6683c 73.38%,
+    #f09433 91.99%
+  );
+}
+
+/* icon font */
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('/assets/iconfont/icomoon.eot?l2i1j');
+  src: url('/assets/iconfont/icomoon.eot?l2i1j#iefix')
+      format('embedded-opentype'),
+    url('/assets/iconfont/icomoon.ttf?l2i1j') format('truetype'),
+    url('/assets/iconfont/icomoon.woff?l2i1j') format('woff'),
+    url('/assets/iconfont/icomoon.svg?l2i1j#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-appliances:before {
+  content: '\e900';
+}
+.ic-baby:before {
+  content: '\e901';
+}
+.ic-beauty:before {
+  content: '\e902';
+}
+.ic-book:before {
+  content: '\e903';
+}
+.ic-car:before {
+  content: '\e904';
+}
+.ic-clothes:before {
+  content: '\e905';
+}
+.ic-foods:before {
+  content: '\e906';
+}
+.ic-houseware:before {
+  content: '\e907';
+}
+.ic-interior:before {
+  content: '\e908';
+}
+.ic-kitchenware:before {
+  content: '\e909';
+}
+.ic-pet:before {
+  content: '\e90a';
+}
+.ic-sports:before {
+  content: '\e90b';
+}
+.ic-stationery:before {
+  content: '\e90c';
+}
+.ic-theme:before {
+  content: '\e90d';
+}
+.ic-toy:before {
+  content: '\e90e';
+}
+.ic-travel:before {
+  content: '\e90f';
+}
